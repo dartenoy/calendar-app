@@ -7,7 +7,7 @@ const date = new Date();
 
 export const state = {
   curDate: "",
-  date: date,
+
   events: [],
   year: "",
   month: "",
@@ -15,7 +15,6 @@ export const state = {
   daysFromLastMonth: "",
   daysInMonth: "",
   lastDayPrevM: "",
-  selected: "",
 };
 
 state.year = date.getFullYear();

@@ -284,6 +284,12 @@ body {
 .modal-err-content button {
   height: 2rem;
 }
+#eventDescription {
+  overflow: auto;
+  word-wrap: break-word;
+  height: 10rem;
+  width: 20rem;
+}
 .hidden {
   display: none;
 }

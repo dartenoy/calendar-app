@@ -23,6 +23,7 @@ const controlMonthViewClick = (target) => {
     target.parentElement.classList.contains("prev-month")
   )
     prevMonthHandler();
+
   if (
     target.classList.contains("next-month") ||
     target.parentElement.classList.contains("next-month")
