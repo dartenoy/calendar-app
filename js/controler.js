@@ -8,10 +8,12 @@ const nextMonthHandler = () => {
   model.updateMonth(1);
   load();
 };
+
 const prevMonthHandler = () => {
   model.updateMonth(-1);
   load();
 };
+
 const controlMonthViewClick = (target) => {
   const selectedDay =
     document.querySelector(".selected").firstChild.textContent;
@@ -28,6 +30,8 @@ const controlMonthViewClick = (target) => {
     nextMonthHandler();
   window.location.hash = "";
 };
+
+////
 
 const controlSubmit = (data) => {
   const valid = model.validateData(data);
@@ -54,6 +58,7 @@ const controlDeleteEvent = () => {
   window.location.hash = "";
   load();
 };
+
 ////////Functions
 const load = () => {
   View.load(model.state);
@@ -61,9 +66,6 @@ const load = () => {
 const getHash = () => {
   return window.location.hash.slice(1);
 };
-// const weekdaytemp = firstWeekday(2022, 0, weekdays);
-
-// console.log(weekdaytemp);
 
 const init = () => {
   View.addHandlerNextMonth(nextMonthHandler);

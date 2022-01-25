@@ -125,7 +125,7 @@ const printEvent = (ev) => {
   newElement.href = `#${ev.id}`;
 
   printDay.appendChild(newElement);
-  printDay.href = ev.id; // newElement.innerText = `${ev.title.leng}`
+  printDay.href = ev.id;
 };
 
 const loadEvents = (state) => {

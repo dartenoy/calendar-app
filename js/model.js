@@ -67,7 +67,7 @@ export const deleteEvent = (id) => {
   const index = findIndex(id);
 
   if (index == -1) return;
-  // el.id === id
+
   state.events.splice(index, 1);
   if (state.events.length == 0) {
     sessionStorage.removeItem("events");
