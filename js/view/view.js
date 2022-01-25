@@ -100,10 +100,11 @@ export const load = (state) => {
   }
 
   // 3) Creating main month tiles , if month for loading is current month, pass in current day to show it on calendar
+
   JSON.stringify(state.curDate) ==
   JSON.stringify([state.year, state.month, state.day])
     ? createTiles(state.daysInMonth, currentMonth, false, "", state.day, true)
-    : createTiles(state.daysInMonth, currentMonth);
+    : createTiles(state.daysInMonth, currentMonth, false, "", "", true);
   tilesLeft -= state.daysInMonth;
 
   // 4) creating next month tiles
@@ -132,7 +133,7 @@ const loadEvents = (state) => {
   state.events.forEach((ev) => {
     const eventDate = ev.date.split("-");
 
-    if (eventDate[0] == state.year && eventDate[1].slice(-1) == state.month + 1)
+    if (eventDate[0] == state.year && Number(eventDate[1]) == state.month + 1)
       printEvent(ev);
   });
 };
