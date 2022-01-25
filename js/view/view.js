@@ -122,7 +122,8 @@ const printEvent = (ev) => {
 
   newElement.classList.add(...eventClass);
   if (ev.title.length < 10) newElement.innerText = ev.title;
-  if (ev.title.length > 10) newElement.innerText = `${ev.title.slice(0, 9)}...`;
+  if (ev.title.length >= 10)
+    newElement.innerText = `${ev.title.slice(0, 9)}...`;
   newElement.href = `#${ev.id}`;
 
   printDay.appendChild(newElement);
