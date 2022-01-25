@@ -101,8 +101,11 @@ export const load = (state) => {
 
   // 3) Creating main month tiles , if month for loading is current month, pass in current day to show it on calendar
 
-  JSON.stringify(state.curDate) ==
-  JSON.stringify([state.year, state.month, state.day])
+  JSON.stringify([
+    state.curDate.year,
+    state.curDate.month,
+    state.curDate.day,
+  ]) == JSON.stringify([state.year, state.month, state.day])
     ? createTiles(state.daysInMonth, currentMonth, false, "", state.day, true)
     : createTiles(state.daysInMonth, currentMonth, false, "", "", true);
   tilesLeft -= state.daysInMonth;
