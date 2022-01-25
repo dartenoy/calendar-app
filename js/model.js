@@ -6,8 +6,11 @@ export let index = 0;
 const date = new Date();
 
 export const state = {
-  curDate: "",
-
+  curDate: {
+    year: date.getFullYear(),
+    month: date.getMonth(),
+    day: date.getDate(),
+  },
   events: [],
   year: "",
   month: "",
@@ -17,10 +20,10 @@ export const state = {
   lastDayPrevM: "",
 };
 
-state.year = date.getFullYear();
-state.month = date.getMonth();
-state.day = date.getDate();
-state.curDate = [state.year, state.month, state.day];
+state.year = state.curDate.year;
+state.month = state.curDate.month;
+state.day = state.curDate.day;
+
 export const setLastDayFromPrevMonth = (year, month) =>
   new Date(year, month, 0).toLocaleDateString("en-us", { day: "numeric" });
 
